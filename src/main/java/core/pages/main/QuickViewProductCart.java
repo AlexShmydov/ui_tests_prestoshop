@@ -41,7 +41,8 @@ public class QuickViewProductCart {
     }
 
     public BlockCard clickOnAddToCart() {
-        ADD_TO_CARD_BUTTON.shouldBe(Condition.visible).click();
+        ADD_TO_CARD_BUTTON.shouldBe(Condition.visible)
+                          .click();
         Waiter.makeDelay(Duration.ofSeconds(2));
         QUICK_VIEW_MODAL.shouldBe(Condition.hidden, Duration.ofSeconds(2));
         return new BlockCard();

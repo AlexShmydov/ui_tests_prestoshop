@@ -38,7 +38,8 @@ public class MainPage {
 
     private void selectDevice() {
         if (!$(String.format(CSS_SELECTOR_ACTIVE_DEVICE_TEMPLATE, device)).exists()) {
-            $(String.format(CSS_SELECTOR_DEVICE_TEMPLATE, device)).shouldBe(Condition.visible).click();
+            $(String.format(CSS_SELECTOR_DEVICE_TEMPLATE, device)).shouldBe(Condition.visible)
+                                                                  .click();
         }
     }
 

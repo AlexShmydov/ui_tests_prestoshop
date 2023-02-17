@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.switchTo;
 
 @SpringBootTest(classes = PagesConfiguration.class)
 public abstract class BaseTest {
@@ -38,7 +37,6 @@ public abstract class BaseTest {
         Configuration.headless = headless;
         Configuration.browserSize = browserSize;
         open(url);
-        //add check PC type
         mainPage.waitForLoad();
     }
 
