@@ -34,7 +34,8 @@ public class AddProductsToCartTest extends BaseTest {
                 .clickOnQuantityUp()
                 .clickOnAddToCart()
                 .clickOnContinueShopping();
-        mainPage.clickOnQuickViewOfProduct(SECOND_PRODUCT_INDEX_TO_SELECT_ON_MAIN_PAGE)
+        mainPage.checkAmountOfProductsInCartIcon(EXPECTED_INCREASED_QUANTITY)
+                .clickOnQuickViewOfProduct(SECOND_PRODUCT_INDEX_TO_SELECT_ON_MAIN_PAGE)
                 .clickOnQuantityUp()
                 .clickOnAddToCart()
                 .clickOnProceedToCheckout()

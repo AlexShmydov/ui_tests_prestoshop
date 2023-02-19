@@ -3,6 +3,7 @@ package broit.homework.core.pages.main;
 import java.time.Duration;
 
 import broit.homework.core.pages.product.ProductPage;
+import broit.homework.core.utils.StringHelper;
 import broit.homework.core.utils.Waiter;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
@@ -24,6 +25,7 @@ public class MainPage {
 
     private static final By PRODUCT_QUICK_VIEW_BUTTON_SELECTOR = By.cssSelector("a.quick-view");
     private static final SelenideElement CONTENT_WRAPPER = $(By.id("wrapper"));
+    private static final SelenideElement BLOCK_CART_PRODUCT_QUANTITY = $("div.blockcart span.cart-products-count");
     private static final SelenideElement PRODUCTS_AREA = $(".products.row");
     private static final ElementsCollection PRODUCTS = $$(".products.row>.js-product.product");
     private static final String CSS_SELECTOR_ACTIVE_DEVICE_TEMPLATE = "a.change-device.%s.active";
@@ -84,5 +86,13 @@ public class MainPage {
         PRODUCTS.shouldBe(CollectionCondition.sizeGreaterThanOrEqual(productIndex));
         PRODUCTS.get(productIndex).click();
         return new ProductPage();
+    }
+
+    @Step("Check amount of products in Block card icon is equal to {expectedQuantity} value")
+    public MainPage checkAmountOfProductsInCartIcon(int expectedQuantity) {
+        log.info("Check amount of products in Block card icon is equal to {} value", expectedQuantity);
+        BLOCK_CART_PRODUCT_QUANTITY.shouldBe(Condition.visible)
+                                   .shouldHave(Condition.match("Amount of products", (e) -> StringHelper.getOnlyNumbers(e.getText()).equals(expectedQuantity)));
+        return this;
     }
 }
