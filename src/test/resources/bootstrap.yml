@@ -2,4 +2,4 @@ browser: chrome
 
 spring:
   profiles:
-    active: common, docker, ${browser}
+    active: common, ${browser}
