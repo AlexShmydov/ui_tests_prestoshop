@@ -24,6 +24,7 @@
         <logback.version>1.2.3</logback.version>
         <apache.logging>2.11.2</apache.logging>
         <log4f.version>2.12.0</log4f.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -163,6 +164,13 @@
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
