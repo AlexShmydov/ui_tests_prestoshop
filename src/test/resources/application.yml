@@ -2,17 +2,19 @@ spring:
   profiles:
     common
 
-driver:
-  headless: false
-  manager:
-    enabled: true
-webDriver:
-  logs:
-    enabled: true
-browser:
-  size: 1024x768
-default:
-  url: https://demo.prestashop.com/
+driver-headless: false
+driver-manager-enabled: true
+webDriver-logs-enabled: true
+browser-size: 1024x768
+default-url: https://demo.prestashop.com/
+
+---
+spring:
+  profiles: docker
+
+remote-url: http://localhost:4444/wd/hub
+enable-VNC: true
+enable-video: true
 
 ---
 spring:
