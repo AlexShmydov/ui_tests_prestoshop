@@ -1,6 +1,6 @@
-package core.configurations;
+package broit.homework.core.configurations;
 
-import core.pages.main.MainPage;
+import broit.homework.core.pages.main.MainPage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
