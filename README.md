@@ -1,6 +1,6 @@
 # How to run tests?
 
-You can use [bootstrap] to select `browser` which you want. The `chrome` is default.
+You can use [bootstrap] to select `browser` which you want and have on your PC. The `chrome` is default.
 All browsers could be specified in [application] file as profiles with additional properties.
 
 Use IDEA, f.e. IntelliJ Idea:
@@ -9,11 +9,7 @@ Use IDEA, f.e. IntelliJ Idea:
    
 ![img.png](docs/run_in_class.png)
 
-3. You can generate allure report after test execution via `allure serve` or `allure report` command in terminal or via maven plugin
-
-![img_2.png](docs/allure_plg.png)
-
-Or you can create build configuration with Tags, f.e.:
+Another way, you can create build configuration with Tags, f.e.:
 
 ![img_1.png](docs/build_cong_tags.png)
 
@@ -25,8 +21,11 @@ Also, you can run tests via maven plugin in IDEA:
 
 ![img.png](docs/maven_plg.png)
 
-NOTE: Allure report will be automatically generated and opened after end of test execution.
-Do not forget to stop allure server. 
+
+# REPORT:
+You can generate allure report after test execution via `allure serve` or `allure report` command in terminal or via maven plugin
+
+![img_2.png](docs/allure_plg.png)
 
 
 [application]: /src/test/resources/application.yml
