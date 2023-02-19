@@ -1,4 +1,6 @@
-import core.pages.main.MainPage;
+package broit.homework;
+
+import broit.homework.core.pages.main.MainPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;

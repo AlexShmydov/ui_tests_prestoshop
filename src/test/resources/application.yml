@@ -10,12 +10,18 @@ webDriver:
   logs:
     enabled: true
 browser:
-  size: 2560x1440
+  size: 1024x768
 default:
   url: https://demo.prestashop.com/
 
 ---
 spring:
   profiles: chrome
+
+device: desktop
+
+---
+spring:
+  profiles: firefox
 
 device: desktop

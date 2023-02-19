@@ -1,7 +1,11 @@
+package broit.homework;
+
+import broit.homework.core.configurations.PagesConfiguration;
+import broit.homework.core.pages.main.MainPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import core.configurations.PagesConfiguration;
-import core.pages.main.MainPage;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +14,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static com.codeborne.selenide.Selenide.open;
 
-@SpringBootTest(classes = PagesConfiguration.class)
+@SpringBootTest(classes = {
+        PagesConfiguration.class
+})
 public abstract class BaseTest {
 
     @Value("${browser}")
@@ -31,6 +37,7 @@ public abstract class BaseTest {
 
     @BeforeEach
     void setUp() {
+        initAllure();
         Configuration.browser = browser;
         Configuration.driverManagerEnabled = driverManagerEnabled;
         Configuration.webdriverLogsEnabled = webDriverLogsEnabled;
@@ -38,6 +45,10 @@ public abstract class BaseTest {
         Configuration.browserSize = browserSize;
         open(url);
         mainPage.waitForLoad();
+    }
+
+    private void initAllure() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 
     @AfterEach
