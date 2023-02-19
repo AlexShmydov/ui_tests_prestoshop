@@ -1,6 +1,6 @@
 # How to run tests?
 
-You can use [bootstrap] to select `browser` which you want. The `chrome` is default.
+You can use [bootstrap] to select `browser` which you want and have on your PC. The `chrome` is default.
 All browsers could be specified in [application] file as profiles with additional properties.
 
 Use IDEA, f.e. IntelliJ Idea:

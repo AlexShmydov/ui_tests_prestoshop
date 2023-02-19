@@ -25,3 +25,9 @@ spring:
   profiles: firefox
 
 device: desktop
+
+---
+spring:
+  profiles: safari
+
+device: desktop
