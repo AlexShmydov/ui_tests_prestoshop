@@ -21,7 +21,7 @@ import static com.codeborne.selenide.Selenide.open;
 })
 public abstract class BaseTest {
 
-    @Value("${default.url}")
+    @Value("${default-url}")
     private String url;
 
     @Autowired
