@@ -12,6 +12,8 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+build
+.allure
 *.iws
 *.iml
 *.ipr
